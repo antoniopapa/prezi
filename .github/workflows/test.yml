@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Run dockerized tests
-      run: python api/manage.py test
+      run: cd api && python manage.py test
