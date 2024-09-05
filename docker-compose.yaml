@@ -15,12 +15,12 @@ services:
 
   api:
     restart: unless-stopped
+    tty: true
     build:
       context: .
       dockerfile: ./api/Dockerfile
-    entrypoint: python api/manage.py runserver
-    expose:
-      - 8000
+    ports:
+      - "8000:8000"
 
 volumes:
   static_volume:
