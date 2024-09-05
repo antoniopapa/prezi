@@ -1,0 +1,16 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - '*'
+    types: [opened, reopened, synchronize]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Run dockerized tests
+      run: python api/manage.py test
