@@ -6,6 +6,7 @@ on:
       - '*'
     types: [opened, reopened, synchronize]
 
+
 jobs:
   pytest:
     runs-on: ubuntu-latest
