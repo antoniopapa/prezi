@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v2
-    - run: pip install -r requirements.txt
+    - run: pip install -r api/requirements.txt
 
     - name: Run dockerized tests
       run: cd api && python manage.py test
