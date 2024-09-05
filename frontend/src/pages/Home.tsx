@@ -9,10 +9,9 @@ const Home = () => {
 
     useEffect(() => {
         (async () => {
-            const {data} = await axios.get(`http://localhost:8000/api/presentations/?search=${search}&page=${page}`);
+            const {data} = await axios.get(`/presentations/?search=${search}&page=${page}`);
 
             setPresentations(page === 1 ? data.data : [...presentations, ...data.data]);
-            console.log(data.data.length);
             setLastPage(data.last_page);
         })();
     }, [page, search])
